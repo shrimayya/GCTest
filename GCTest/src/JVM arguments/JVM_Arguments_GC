@@ -1,0 +1,23 @@
+JVM Arguments:-
+
+-Xmx30m  :---------To set Max Size of Heap
+
+-XX:+UseSerialGC :------------To use Serial Garbage Collector
+-XX:+UseParallelGC :------------To use Parallel Garbage Collector(Multi thread in young Generation and single thread in old generation)
+-XX:+UseParallelOldGC:------------To use Parallel Garbage Collector(Multi thread in young Generation and Multi thread in old generation)
+-XX:+UseConcMarkSweepGC:-------To use CMS Garbage Collector
+
+To print GC logs in a file:-
+Syntax:- -Xloggc: <Filepath> -verbose:gc <Arguments>
+Example :- -Xloggc:E:\jvm.log -verbose:gc -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintTenuringDistribution
+
+G1 GC related JVM Arguments:-
+
+-XX:+UseG1GC :------------To use G1 Garbage Collector
+-XX:MaxGCPauseMillis=10 :------------To give max pause of 10 milliseconds 
+-XX:GCTimeRatio=1 (Value ranges from 0-9) 1 means 10% 9 means 90% throughput
+
+Tools to see GC logs:-
+1)jconsole
+2)jVisualVm
+3)Upload your GC logs to  :- http://gceasy.io/ to get graphs
